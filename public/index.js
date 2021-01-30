@@ -12,6 +12,13 @@ fetch("/api/transaction")
     populateTotal();
     populateTable();
     populateChart();
+  })
+  .catch(e => {
+    saveRecord(transaction);
+
+    // clear form
+    nameEl.value = '';
+    amountEl.value = '';
   });
 
 function populateTotal() {
