@@ -5,21 +5,19 @@ const FILES_TO_CACHE = [
   "/index.html",
   '/index.js',
   "/manifest.webmanifest",
-  "/style.css",
+  "/styles.css",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
   '/db.js',
+  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://cdn.jsdelivr.net/npm/chart.js@2.8.0'
 ];
 
 // install
 self.addEventListener("install", function (evt) {
   // pre cache image data
   evt.waitUntil(
-    caches.open(DATA_CACHE_NAME).then( async (cache) => {
-      let res = await fetch('/api/transaction');
-      let transactions = await res.json();
-      cache.add(transactions);
-    })
+    caches.open(DATA_CACHE_NAME).then((cache) => cache.add("/api/transaction"))
   );
     
   // pre cache all static assets
