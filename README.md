@@ -5,6 +5,7 @@
 
 ## Description
 An online/offline budget tracker! You can submit +/- transactions whether you're connected to the internet or not. 
+
 <a href='https://budget-tracker-wh.herokuapp.com/'>Deployed Application</a>
 
 <img src='./assets/application-pic.png' />
